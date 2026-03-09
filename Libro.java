@@ -57,33 +57,40 @@ public class Libro {
     public void prestarLibro(){
         //Antes de prestarlo, comprobar si esta en el sistema
         Scanner sc = new Scanner(System.in);
-        System.out.println("¿A que persona se lo prestara?");
-        String persona = sc.nextLine();
-        
-        if(disponibilidad = true){
+        if(disponibilidad == true){
             disponibilidad = false;
-            System.out.println("El libro ha sido prestado a: " + persona);
-        }else{
-            System.out.println("El libro ya ha sido prestado");
+            System.out.println("¿A quién le prestarás el libro: " + titulo + "?");
+            personaLibro = sc.nextLine();
+            System.out.println("Has prestado el libro a: " + personaLibro);
+        }else if(disponibilidad == false){
+            System.out.println("El libro ya ha sido prestado a la persona llamada: " + personaLibro);
         }
         
-        persona = this.personaLibro;
         
     }
     
     public void devolverLibro(){
-        if(disponibilidad = false){
+        if(disponibilidad == false){
             disponibilidad = true;
-            System.out.println("Gracias por devolver el libro " + personaLibro);
+            System.out.println("Gracias por devolver el libro" );
         }else{
             System.out.println("Ya tenemos este libro, no hace falta.");
         }
     }
     
     public void mostrarInformacion(){
-        System.out.println("\nLibro: " + titulo + 
-                "\nAutor: " + autor + 
-                "\nAño de publicacion: " + 
-                "\nDisponibiliad:" + disponibilidad);
+        if(disponibilidad == true){
+            System.out.println("\nLibro: " + titulo + 
+            "\nAutor: " + autor + 
+            "\nAnio de publicacion: " + anioPublicacion + 
+            "\nDisponibiliad:" + disponibilidad); 
+        }else{
+            System.out.println("\nLibro: " + titulo + 
+                    "\nAutor: " + autor + 
+                    "\nAnio de publicacion: " + anioPublicacion + 
+                    "\nDisponibilidad: " + disponibilidad + 
+                    "\nLo tiene: " + personaLibro);
+        }
+
     }
 }
