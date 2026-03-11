@@ -16,6 +16,10 @@ public class Main {
         biblioteca.aniadirLibro(ruidoFractal);
         biblioteca.aniadirLibro(hombreBuscaSentido);
         biblioteca.aniadirLibro(eragon);
-        biblioteca.buscarLibro();
+        biblioteca.mostrarBiblioteca();
+
+        ruidoFractal.prestarLibro();
+        ruidoFractal.prestarLibro();
+        ruidoFractal.mostrarInformacion();
     }
 }

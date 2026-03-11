@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Biblioteca {
 
     private ArrayList<Libro> biblioteca; //"Base de datos" de nuestros libros
-    
+
     //Constructor
     public Biblioteca(){
         biblioteca = new ArrayList<>();
@@ -14,26 +14,20 @@ public class Biblioteca {
 
     //Metodos
     public void aniadirLibro(Libro l) {
-        System.out.println("El libro se ha añadido correctamente...");
         biblioteca.add(l);
     }
 
-    public void eliminarLibro(String nombreLibro) {
-        boolean libroFueEncontrado = false;
+    public void eliminarLibro() {
         Scanner sc = new Scanner(System.in);
         System.out.println("¿Qué libro desea eliminar?");
-
+        String nombreLibro = sc.nextLine();
         //Busca por todos los libros hasta encontrar el buscado por el usuario.
+        //Eliminar libro:
         for (Libro l : biblioteca) {
             if (l.getTitulo().equalsIgnoreCase(nombreLibro)) {
-                libroFueEncontrado = true;
                 biblioteca.remove(l);
+                break;
             }
-        }
-        //Mensaje si el libro fue encontrado
-        if (libroFueEncontrado) {
-            System.out.println("No se ha encontrado ningún libro con ese nombre");
-            libroFueEncontrado = false;
         }
     }
 
@@ -80,7 +74,7 @@ public class Biblioteca {
     //Mostrar los libros que tenemos almacenados en nuestra biblioteca
     public void mostrarBiblioteca() {
         for (int i = 0; i < biblioteca.size(); i++) {
-            System.out.println("[" + i + "]: " + biblioteca.get(i).getTitulo());
+            System.out.println("[" + (i+1) + "]: " + biblioteca.get(i).getTitulo());
         }
     }
 
