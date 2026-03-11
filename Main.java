@@ -11,8 +11,11 @@ public class Main {
         //Biblioteca
         Biblioteca biblioteca = new Biblioteca();
         Libro ruidoFractal = new Libro("Ruido Fractal", "Christopher Paolini", LocalDateTime.of(2023, 10, 25, 14, 30), true);
+        Libro eragon = new Libro("Eragon", "Christopher Paolini", LocalDateTime.of(2003, 9, 26, 14,30), true);
         Libro hombreBuscaSentido = new Libro("El hombre en busca del sentido", "Victor E. Frankl", LocalDateTime.of(1946,1,1,14,30), true);
         biblioteca.aniadirLibro(ruidoFractal);
         biblioteca.aniadirLibro(hombreBuscaSentido);
+        biblioteca.aniadirLibro(eragon);
+        biblioteca.buscarLibro();
     }
 }
