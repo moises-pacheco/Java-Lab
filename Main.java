@@ -8,11 +8,11 @@ import java.time.LocalDateTime;
  */
 public class Main {
     public static void main(String[] args) {
-        Libro rf = new Libro("Ruido Fractal", "Christopher Paolini",LocalDateTime.of(2026,3,9,14,30),true);
-        rf.mostrarInformacion();
-        Libro bds = new Libro("El hombre en busca del sentido", "Victor Frankl", LocalDateTime.of(2026,1,3,14,30), true);
-        bds.prestarLibro();
-        bds.prestarLibro();
-        bds.mostrarInformacion();
+        //Biblioteca
+        Biblioteca biblioteca = new Biblioteca();
+        Libro ruidoFractal = new Libro("Ruido Fractal", "Christopher Paolini", LocalDateTime.of(2023, 10, 25, 14, 30), true);
+        Libro hombreBuscaSentido = new Libro("El hombre en busca del sentido", "Victor E. Frankl", LocalDateTime.of(1946,1,1,14,30), true);
+        biblioteca.aniadirLibro(ruidoFractal);
+        biblioteca.aniadirLibro(hombreBuscaSentido);
     }
 }

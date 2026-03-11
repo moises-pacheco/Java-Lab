@@ -104,6 +104,4 @@ public class Libro {
                     "\nLo tiene: " + personaLibro);
         }
     }
-
-    }
 }
