@@ -66,12 +66,12 @@ public class Libro {
     public void prestarLibro(){
         //Antes de prestarlo, comprobar si esta en el sistema
         Scanner sc = new Scanner(System.in);
-        if(disponibilidad == true){
+        if(disponibilidad){
             disponibilidad = false;
             System.out.println("¿A quién le prestarás el libro: " + titulo + "?");
             personaLibro = sc.nextLine();
             System.out.println("Has prestado el libro a: " + personaLibro);
-        }else if(disponibilidad == false){
+        }else{
             System.out.println("El libro ya ha sido prestado a la persona llamada: " + personaLibro);
         }
         
@@ -80,7 +80,7 @@ public class Libro {
     
     public void devolverLibro(){
         //Si no está en el sistema, entonces permite devolverlo
-        if(disponibilidad == false){
+        if(!disponibilidad){
             disponibilidad = true;
             System.out.println("Gracias por devolver el libro" );
         }else{
@@ -90,7 +90,7 @@ public class Libro {
     
     public void mostrarInformacion(){
         //Si está en el sistema, se muestra la información del libro
-        if(disponibilidad == true){
+        if(disponibilidad){
             System.out.println("\nLibro: " + titulo + 
             "\nAutor: " + autor + 
             "\nAnio de publicacion: " + anioPublicacion + 
